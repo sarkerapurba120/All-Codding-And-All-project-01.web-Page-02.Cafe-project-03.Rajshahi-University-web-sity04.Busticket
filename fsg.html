@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1>Welcome Back</h1>
+        <form id="loginForm" class="auth-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="auth-btn">Login</button>
+        </form>
+        <p class="auth-footer">Don't have an account? <a href="#" id="registerLink">Register</a></p>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
+2. Main Page (main.html)
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Dashboard</h1>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </header>
+    
+    <main class="main-content">
+        <section class="welcome-section">
+            <h2>Welcome, <span id="loggedInUser">User</span>!</h2>
+            <p>You have successfully logged in to your account.</p>
+        </section>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Auth Container Styles */
+.auth-container {
+    max-width: 400px;
+    margin: 5rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.auth-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #2980b9;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #7f8c8d;
+}
+
+.auth-footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Main Page Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2c3e50;
+    color: white;
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.welcome-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    // If user is on login page but already logged in, redirect to main page
+    if (isLoggedIn && currentPage === 'index.html') {
+        window.location.href = 'main.html';
+    }
+    // If user is not logged in but trying to access main page, redirect to login
+    else if (!isLoggedIn && currentPage === 'main.html') {
+        window.location.href = 'index.html';
+    }
+});
+
+// Login Form Handling
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        // Simple validation (in a real app, you'd check against a database)
+        if (username && password) {
+            // Store login state and username in localStorage
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('username', username);
+            
+            // Redirect to main page
+            window.location.href = 'main.html';
+        } else {
+            alert('Please enter both username and password');
+        }
+    });
+}
+
+// Logout Button Handling
+const logoutBtn = document.getElementById('logoutBtn');
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', function() {
+        // Clear the login state
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('username');
+        
+        // Redirect to login page
+        window.location.href = 'index.html';
+    });
+}
+// Display logged-in user on main page
+const loggedInUser = document.getElementById('loggedInUser');
+if (loggedInUser) {
+    const username = localStorage.getItem('username');
+    loggedInUser.textContent = username ? `Welcome, ${username}` : 'Welcome, Guest';
+}

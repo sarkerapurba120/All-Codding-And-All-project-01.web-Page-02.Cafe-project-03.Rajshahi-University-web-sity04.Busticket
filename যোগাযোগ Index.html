@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ - আমাদের কোম্পানি</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+        
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            border-bottom: #e8491d 3px solid;
+        }
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+        
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+        nav .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        
+        #main {
+            padding: 20px 0;
+        }
+        
+        .page-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #35424a;
+        }
+        
+        .contact-form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form div {
+            margin-bottom: 15px;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+        }
+        
+        .button_1 {
+            display: inline-block;
+            background: #e8491d;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .button_1:hover {
+            background: #35424a;
+        }
+        
+        #sidebar {
+            float: right;
+            width: 60%;
+            margin-top: 20px;
+        }
+        
+        .dark {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+        
+        @media(max-width: 768px) {
+            #sidebar {
+                float: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">হোম</a></li>
+                    <li><a href="about.html">আমাদের সম্পর্কে</a></li>
+                    <li class="current"><a href="contact.html">যোগাযোগ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="main">
+        <div class="container">
+            <article id="main-col">
+                <h1 class="page-title">আমাদের সাথে যোগাযোগ করুন</h1>
+                <form id="contactForm" class="contact-form">
+                    <div>
+                        <label>নাম</label><br>
+                        <input type="text" placeholder="আপনার নাম লিখুন" required>
+                    </div>
+                    <div>
+                        <label>ইমেইল</label><br>
+                        <input type="email" placeholder="আপনার ইমেইল লিখুন" required>
+                    </div>
+                    <div>
+                        <label>বার্তা</label><br>
+                        <textarea placeholder="আপনার বার্তা লিখুন" required></textarea>
+                    </div>
+                    <button class="button_1" type="submit">পাঠান</button>
+                </form>
+            </article>
+            <br><br>
+            <aside id="sidebar">
+                <div class="dark">
+                    <h3>আমাদের ঠিকানা</h3>
+                    <p>+১২৩ মেইন স্ট্রিট<br>ঢাকা, বাংলাদেশ<br>ফোন: +৮৮০ ১৭৯৭-৯২১৫৬৪<br>ইমেইল: sarkarapurbo75@gmail.com</p>
+                    <h3 style="margin-top: 20px;">কর্ম সময়</h3>
+                    <p>শনিবার-বৃহস্পতিবার: ০৯:০০ AM - ০৫:০০ PM<br>শুক্রবার:- বন্ধ</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <p>২০২৫ - আমাদের কোম্পানি</p>
+    </footer>
+</body>
+</html>

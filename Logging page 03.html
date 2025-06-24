@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লগইন করুন</title>
+    <style>
+        body {
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            direction: rtl;
+        }
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .links {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="data:image/jpeg;base64,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" alt="লোগো" class="logo">
+        <h2>আপনার অ্যাকাউন্টে লগইন করুন</h2>
+        
+        <form action="/login" method="POST">
+            <div class="input-group">
+                <label for="username">ইউজারনেম বা ইমেইল</label>
+                <input type="text" id="username" name="username" placeholder="আপনার ইউজারনেম বা ইমেইল লিখুন" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">পাসওয়ার্ড</label>
+                <input type="password" id="password" name="password" placeholder="আপনার পাসওয়ার্ড লিখুন" required>
+            </div>
+            
+            <button type="submit" class="btn">লগইন করুন</button>
+        </form>
+        
+        <div class="links">
+            <a href="/forgot-password">পাসওয়ার্ড ভুলে গেছেন?</a> | 
+            <a href="/register">নতুন অ্যাকাউন্ট তৈরি করুন</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="file:///C:/Users/User/Desktop/Apurba%20Sarker%20%E0%A6%8F%E0%A6%B0%20%E0%A6%B8%E0%A7%81%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A6%B0%20%E0%A6%93%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%AC%20%E0%A6%AA%E0%A7%83%E0%A6%B7%E0%A7%8D%E0%A6%A0%E0%A6%BE/All%20Coding.html">
+    <title>লগইন পৃষ্ঠা - আমার ওয়েবসাইট</title>
+    <style>
+        body {
+            font-family: 'SolaimanLipi', Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            color: #0066cc;
+            margin-bottom: 25px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0055aa;
+        }
+        .forgot-password {
+            margin-top: 15px;
+            display: block;
+            color: #0066cc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>লগ ইন করুন</h1>
+        <form action="/login" method="POST">
+            <div class="input-group">
+                <label for="username">ব্যবহারকারীর নাম</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">পাসওয়ার্ড</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">লগ ইন</button>
+            <a href="#" class="forgot-password">পাসওয়ার্ড ভুলে গেছেন?</a>
+        </form>
+    </div>
+</body>
+</html>

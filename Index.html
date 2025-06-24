@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangladesh(Dhaka) Cafe - Fresh & Delicious</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(90deg, #3498db, #2c3e50);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .domain-icon {
+            font-size: 5rem;
+            margin-bottom: 25px;
+            color: #3498db;
+            text-shadow: 0 0 15px rgba(52, 152, 219, 0.5);
+        }
+        
+        p {
+            color: #34495e;
+            font-size: 1.4rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .info-box {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-box h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .info-box p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 0;
+        }
+        
+        .more-info {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .more-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .more-info:active {
+            transform: translateY(0);
+        }
+        
+        .more-info::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .more-info:hover::after {
+            transform: translateX(100%);
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            width: 30%;
+            min-width: 150px;
+            margin: 10px;
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .feature p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature {
+                width: 80%;
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="domain-icon">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+            <h1>Bangladesh(Dhaka) Cafe - Fresh & Delicious</h1>
+            <p>Welcome to Bangladesh(Dhaka) Cafe, where we serve the freshest and most delicious dishes inspired by the rich culinary heritage of Bangladesh. Our cafe is a haven for food lovers, offering a diverse menu that caters to all tastes.</p>
+
+            <div class="info-box">
+                <h3>About Bangladesh(Dhaka) Cafe</h3>
+                <p>Bangladesh(Dhaka) Cafe is dedicated to providing an authentic dining experience, showcasing the vibrant flavors and culinary traditions of Bangladesh. Join us for a memorable meal!</p>
+            </div>
+            
+            <a href="https://www.iana.org/domains/reserved" class="more-info">
+                More information...
+            </a>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Documentation</h3>
+                    <p>Perfect for technical documentation and API examples</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lock"></i>
+                    <h3>Safe Usage</h3>
+                    <p>No risk of conflicting with real domains or trademarks</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educational</h3>
+                    <p>Ideal for tutorials and educational materials</p>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>This page is for Demonstration purposes only</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
